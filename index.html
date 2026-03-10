@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Diksha — Happy Birthday</title>
+<title>For Sofia — Happy Birthday</title>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400;1,6..96,600&family=Jost:wght@200;300;400&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
@@ -488,71 +488,51 @@ body{
 /* ═══════════════════════ CANDLES ═══════════════════════ */
 #s-candle{
   position:relative;z-index:2;
-  padding:clamp(56px,10vw,100px) 24px clamp(48px,9vw,80px);
+  padding:clamp(56px,10vw,100px) 24px clamp(48px,9vw,90px);
   background:
-    radial-gradient(ellipse 70% 80% at 50% 80%,#130822 0%,var(--night) 65%);
-  text-align:center;
+    radial-gradient(ellipse 100% 60% at 50% 105%, rgba(30,12,55,.9) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 40% at 20% 40%, rgba(10,14,36,.7) 0%, transparent 60%),
+    var(--night);
+  text-align:center;overflow:hidden;
 }
-.candle-row{
-  display:flex;justify-content:center;align-items:flex-end;
-  gap:clamp(12px,3.5vw,22px);
-  margin:clamp(30px,6vw,48px) auto 0;
+.cake-stage{
+  position:relative;
+  width:min(540px,96vw);
+  margin:clamp(24px,5vw,40px) auto 0;
+  display:flex;justify-content:center;
 }
-.candle-item{display:flex;flex-direction:column;align-items:center;}
-.flame-wrap{
-  width:clamp(22px,6vw,30px);height:clamp(36px,9vw,52px);
-  transition:opacity .55s ease,transform .55s ease;
-  transform-origin:bottom center;flex-shrink:0;
-}
-.flame-wrap.out{opacity:0;transform:scaleY(0) translateY(4px);}
-.flame-wrap svg{width:100%;height:100%;}
-.flame-inner{animation:flickerFlame 1.4s ease-in-out infinite;transform-origin:50% 100%;}
-@keyframes flickerFlame{
-  0%,100%{transform:scaleX(1)    scaleY(1)    skewX(0deg);}
-  28%    {transform:scaleX(.86)  scaleY(1.07) skewX(-2deg);}
-  68%    {transform:scaleX(1.12) scaleY(.95)  skewX(2.5deg);}
-}
-.candle-stick{
-  border-radius:3px 3px 2px 2px;
-  width:clamp(20px,5vw,28px);
-  position:relative;flex-shrink:0;
-  box-shadow:0 6px 18px rgba(0,0,0,.4);
-}
-.candle-stick::before{
-  content:'';position:absolute;
-  top:-6px;left:50%;transform:translateX(-50%);
-  width:2px;height:6px;background:#1a0e18;border-radius:1px;
-}
-/* drip effect */
-.candle-stick::after{
-  content:'';position:absolute;
-  top:8px;right:-2px;
-  width:5px;height:14px;
-  border-radius:0 0 4px 4px;
-  opacity:.7;
+#cake-canvas{
+  display:block;
+  width:100%;height:auto;
 }
 .blow-btn{
-  margin-top:clamp(24px,5vw,36px);
-  padding:12px clamp(28px,7vw,44px);
+  margin-top:clamp(28px,5vw,40px);
+  padding:12px clamp(28px,7vw,48px);
   background:transparent;
   border:1px solid rgba(217,68,112,.35);border-radius:50px;
   color:var(--rose2);font-family:'Jost',sans-serif;
   font-size:.74rem;letter-spacing:.15em;text-transform:uppercase;
-  cursor:pointer;transition:all .3s;
-  min-height:44px;display:inline-flex;align-items:center;gap:6px;
+  cursor:pointer;transition:all .35s;
+  min-height:44px;display:inline-flex;align-items:center;gap:7px;
+  position:relative;z-index:2;
 }
-.blow-btn:hover{background:rgba(217,68,112,.08);border-color:var(--rose2);}
+.blow-btn:hover{
+  background:rgba(217,68,112,.09);border-color:var(--rose2);
+  box-shadow:0 0 28px rgba(217,68,112,.18);
+}
 #mic-status{
   margin-top:10px;font-size:.62rem;letter-spacing:.1em;
   color:rgba(238,228,205,.18);text-transform:uppercase;
+  position:relative;z-index:2;
 }
 .candle-wish{
-  margin:clamp(22px,4vw,32px) auto 0;
+  margin:clamp(22px,4vw,34px) auto 0;
   font-family:'Bodoni Moda',serif;font-style:italic;
   font-size:clamp(.95rem,2.5vw,1.12rem);
-  color:rgba(238,228,205,.52);
+  color:rgba(238,228,205,.55);
   max-width:min(380px,90vw);
-  opacity:0;transition:opacity 1.2s ease;line-height:1.8;
+  opacity:0;transition:opacity 1.4s ease;line-height:1.85;
+  position:relative;z-index:2;
 }
 .candle-wish.show{opacity:1;}
 
@@ -629,7 +609,7 @@ body{
   <div class="moon-wrap"></div>
   <p class="s1-eyebrow">✦ &nbsp; a night made just for you &nbsp; ✦</p>
   <h1 class="s1-title">Happy<br><em>Birthday</em></h1>
-  <div class="s1-name">Diksha</div>
+  <div class="s1-name">Sofia</div>
   <div class="s1-line"></div>
   <p class="s1-hint">✦ &nbsp; click anywhere for fireworks &nbsp; ✦</p>
 </section>
@@ -688,26 +668,18 @@ body{
   <div class="env-outer">
     <span class="eyebrow">✦ &nbsp; a secret letter &nbsp; ✦</span>
     <h2 class="sec-title" style="margin-bottom:10px;">There's something <em>inside</em></h2>
-    <p class="env-sub">Open the envelope, Diksha</p>
+    <p class="env-sub">Open the envelope, Sofia</p>
 
     <div class="envelope-scene" id="envelope" onclick="openEnvelope()">
 
       <!-- Letter paper (z:10, rises up) -->
       <div class="env-letter">
-        <div class="letter-to">To: Diksha, with all my heart</div>
-        <div class="letter-body">If I could bottle up one feeling
-and give it to you forever,
-it would be the way I feel
-every time you smile at me —
+        <div class="letter-to">To: Sofia, with all my heart</div>
+        <div class="letter-body">Every time you smile at me,
+the whole world gets a little quieter —
+and the only thing that matters is you.
 
-like the whole world just got
-a little quieter,
-and the only thing that matters
-is right here, right now,
-with you.
-
-Happy Birthday, my love.
-You are my favourite everything.</div>
+Happy Birthday, my love. 🌙</div>
         <div class="letter-from">— Yours, always 🌙</div>
       </div>
 
@@ -783,8 +755,8 @@ You are my favourite everything.</div>
     <div class="s4-photo-wrap">
       <div class="s4-photo-frame">
         <img
-          src="images/ghibli.jpg"
-          alt="Diksha"
+          src="images/dp1.jpg"
+          alt="Sofia"
         >
       </div>
     </div>
@@ -796,7 +768,7 @@ You are my favourite everything.</div>
         <strong>warmer, softer, more alive.</strong>
       </div>
       <div class="s4-rule"></div>
-      <div class="s4-cap">For Diksha &nbsp;·&nbsp; on her special day</div>
+      <div class="s4-cap">For Sofia &nbsp;·&nbsp; on her special day</div>
     </div>
   </div>
 </section>
@@ -805,10 +777,12 @@ You are my favourite everything.</div>
 <section id="s-candle">
   <span class="eyebrow">✦ &nbsp; make a wish &nbsp; ✦</span>
   <h2 class="sec-title" style="margin-bottom:0;">Blow out the <em>candles</em></h2>
-  <div class="candle-row" id="candle-row"></div>
-  <div style="margin-top:0;">
+  <div class="cake-stage">
+    <canvas id="cake-canvas" width="380" height="260"></canvas>
+  </div>
+  <div>
     <button class="blow-btn" onclick="blowCandles()">🌬️ &nbsp; Blow!</button>
-    <div id="mic-status">or blow into your mic</div>
+    <div id="mic-status">tap the button above to blow out the candles</div>
   </div>
   <p class="candle-wish" id="candle-wish">✦ Your wish has been sent to the stars ✦</p>
 </section>
@@ -819,7 +793,7 @@ You are my favourite everything.</div>
   <div class="s5-inner">
     <span class="s5-eyebrow">✦ &nbsp; today &nbsp; ✦</span>
     <div class="s5-big">Happy<br><em>Birthday</em></div>
-    <span class="s5-name">Diksha</span>
+    <span class="s5-name">Sofia</span>
     <p class="s5-msg">
       Tonight the stars are out for you.<br>
       The moon has been waiting.<br>
@@ -1003,7 +977,7 @@ function toggleMusic(){
 
 /* ═══ SHARE ═══ */
 function shareIt(){
-  if(navigator.share){navigator.share({title:'Happy Birthday Diksha!',url:location.href}).catch(()=>{});}
+  if(navigator.share){navigator.share({title:'Happy Birthday Sofia!',url:location.href}).catch(()=>{});}
   else{
     navigator.clipboard.writeText(location.href).catch(()=>{});
     const t=document.getElementById('share-toast');
@@ -1034,60 +1008,295 @@ function openEnvelope(){
   document.getElementById('env-hint').textContent='✦ a letter just for you ✦';
 }
 
-/* ═══ CANDLES ═══ */
-const cD=[{h:68,c:'#e8c0e8'},{h:52,c:'#b0c8f8'},{h:60,c:'#f8b8c8'},{h:46,c:'#b0e8c0'},{h:72,c:'#f8dca0'}];
-const cRow=document.getElementById('candle-row');
-cD.forEach((d,i)=>{
-  const item=document.createElement('div');item.className='candle-item';
-  const fw=document.createElement('div');fw.className='flame-wrap';fw.id=`fl-${i}`;
-  fw.innerHTML=`<svg viewBox="0 0 28 52" fill="none">
-    <defs><radialGradient id="fg${i}" cx="50%" cy="82%" r="62%">
-      <stop offset="0%" stop-color="#fff9e8"/>
-      <stop offset="35%" stop-color="#ffb030"/>
-      <stop offset="100%" stop-color="#e8507a" stop-opacity="0"/>
-    </radialGradient></defs>
-    <g class="flame-inner">
-      <ellipse cx="14" cy="36" rx="12" ry="18" fill="url(#fg${i})" opacity=".9"/>
-      <ellipse cx="14" cy="25" rx="7"  ry="13" fill="#fff0c0" opacity=".8"/>
-      <ellipse cx="14" cy="18" rx="4"  ry="8"  fill="white"   opacity=".5"/>
-    </g></svg>`;
-  const body=document.createElement('div');body.className='candle-stick';body.style.height=d.h+'px';
-  const r=parseInt(d.c.slice(1,3),16),g=parseInt(d.c.slice(3,5),16),b=parseInt(d.c.slice(5,7),16);
-  body.style.background=`linear-gradient(to right,rgba(${r},${g},${b},.55),rgba(${r},${g},${b},1),rgba(${r},${g},${b},.55))`;
-  // drip color
-  body.style.setProperty('--dc',`rgba(${r},${g},${b},.7)`);
-  item.appendChild(fw);item.appendChild(body);cRow.appendChild(item);
-});
-let lC=cD.length,relit=true;
+/* ═══════════════════════════════════════════════
+   CAKE CANVAS — compact & decorative
+   ═══════════════════════════════════════════════ */
+const CC  = document.getElementById('cake-canvas');
+const ctx = CC.getContext('2d');
+const CW = 380, CH = 260;
+CC.width = CW; CC.height = CH;
+
+const GOLD='#c9983a',GOLD2='#e8bc5a',GOLD3='#f5d98a';
+const ROSE='#d94470',ROSE2='#f07898';
+
+// ── compact layout ──
+const CX      = 190;   // canvas centre x
+const PLATE_Y = 236;   // plate centre
+const CAKE_BOT= 228;
+const BT_TOP  = 162;   // bottom tier top y  (bottom tier: 162–228)
+const TT_TOP  = 118;   // top tier top y     (top tier:    118–162)
+const TT_BOT  = 162;
+const T2W     = 168;   // bottom tier half-width
+const T1W     = 116;   // top tier half-width
+const CW2     = 11;    // candle width
+
+// ── candles ──
+const CANDLES = [
+  { x: CX-66, h:42, body:'#f0b8d4', dark:'#c860a0', dripSide:-1 },
+  { x: CX-33, h:52, body:'#a8c4f8', dark:'#5080d8', dripSide: 1 },
+  { x: CX,    h:36, body: ROSE2,    dark: ROSE,     dripSide:-1 },
+  { x: CX+33, h:48, body: GOLD2,    dark: GOLD,     dripSide: 1 },
+  { x: CX+66, h:40, body:'#90d8b8', dark:'#30a870', dripSide:-1 },
+];
+
+const flames = CANDLES.map(()=>({
+  alpha:1, lit:true,
+  flick:Math.random()*Math.PI*2,
+  fspd:.038+Math.random()*.028,
+  wob:0, wobV:0,
+}));
+
+let smokes=[];
+function puff(x,y){
+  for(let i=0;i<6;i++) smokes.push({
+    x, y:y-2,
+    vx:(Math.random()-.5)*.5,
+    vy:-(0.4+Math.random()*.65),
+    r:1.4+Math.random()*2.2,
+    a:.36, life:1,
+  });
+}
+
+// ── draw cake ──
+function drawCake(){
+  // drop shadow
+  const shd=ctx.createRadialGradient(CX,PLATE_Y+6,8,CX,PLATE_Y+6,148);
+  shd.addColorStop(0,'rgba(0,0,0,.5)');
+  shd.addColorStop(.5,'rgba(0,0,0,.15)');
+  shd.addColorStop(1,'rgba(0,0,0,0)');
+  ctx.fillStyle=shd;
+  ctx.beginPath(); ctx.ellipse(CX,PLATE_Y+6,148,18,0,0,Math.PI*2); ctx.fill();
+
+  // ── plate ──
+  const plG=ctx.createLinearGradient(CX-T2W-18,PLATE_Y,CX+T2W+18,PLATE_Y);
+  plG.addColorStop(0,'#0c1120'); plG.addColorStop(.5,'#1c2338'); plG.addColorStop(1,'#0c1120');
+  ctx.fillStyle=plG;
+  ctx.beginPath(); ctx.ellipse(CX,PLATE_Y,T2W+18,13,0,0,Math.PI*2); ctx.fill();
+  // gold rim
+  ctx.strokeStyle='rgba(201,152,58,.5)'; ctx.lineWidth=1.2;
+  ctx.beginPath(); ctx.ellipse(CX,PLATE_Y-2,T2W+16,11,0,Math.PI,Math.PI*2); ctx.stroke();
+  // inner surface
+  const plIn=ctx.createLinearGradient(CX-T2W,PLATE_Y,CX+T2W,PLATE_Y);
+  plIn.addColorStop(0,'#131a2c'); plIn.addColorStop(.5,'#1c2440'); plIn.addColorStop(1,'#131a2c');
+  ctx.fillStyle=plIn;
+  ctx.beginPath(); ctx.ellipse(CX,PLATE_Y,T2W+6,9,0,0,Math.PI*2); ctx.fill();
+
+  // ── BOTTOM TIER side ──
+  const bt_sG=ctx.createLinearGradient(CX-T2W,BT_TOP,CX+T2W,CAKE_BOT);
+  bt_sG.addColorStop(0,'#0c1326'); bt_sG.addColorStop(.5,'#18203e'); bt_sG.addColorStop(1,'#0c1326');
+  ctx.fillStyle=bt_sG;
+  ctx.beginPath();
+  ctx.ellipse(CX,CAKE_BOT,T2W,11,0,0,Math.PI);
+  ctx.lineTo(CX-T2W,BT_TOP);
+  ctx.ellipse(CX,BT_TOP,T2W,11,0,Math.PI,0);
+  ctx.closePath(); ctx.fill();
+
+  // bottom tier decorative rose dots band
+  for(let dx=-T2W+18;dx<T2W-10;dx+=22){
+    const ex=CX+dx, ey=BT_TOP+24+Math.sin(dx*.09)*4;
+    ctx.beginPath(); ctx.arc(ex,ey,2.2,0,Math.PI*2);
+    ctx.fillStyle='rgba(240,120,152,.32)'; ctx.fill();
+  }
+  // tiny gold stars on bottom tier
+  ctx.font='8px serif'; ctx.textAlign='center'; ctx.fillStyle='rgba(232,188,90,.28)';
+  [-120,-72,-24,24,72,120].forEach(dx=>ctx.fillText('✦',CX+dx,BT_TOP+42));
+
+  // bottom tier top ellipse
+  const bt_tG=ctx.createRadialGradient(CX-30,BT_TOP-4,4,CX,BT_TOP,T2W);
+  bt_tG.addColorStop(0,'#232e5a'); bt_tG.addColorStop(.5,'#1a2448'); bt_tG.addColorStop(1,'#101830');
+  ctx.fillStyle=bt_tG;
+  ctx.beginPath(); ctx.ellipse(CX,BT_TOP,T2W,11,0,0,Math.PI*2); ctx.fill();
+
+  // cream frosting drips from BT_TOP
+  [-140,-100,-62,-24,14,52,90,130].forEach(dx=>{
+    const drx=CX+dx, dlen=9+Math.abs(Math.sin(dx*.14))*13;
+    const fG=ctx.createLinearGradient(drx,BT_TOP,drx,BT_TOP+dlen);
+    fG.addColorStop(0,'rgba(238,228,205,.26)'); fG.addColorStop(1,'rgba(238,228,205,0)');
+    ctx.fillStyle=fG;
+    ctx.beginPath(); ctx.ellipse(drx,BT_TOP+dlen,4.5,5,0,0,Math.PI*2); ctx.fill();
+    ctx.fillRect(drx-3.5,BT_TOP,7,dlen);
+  });
+
+  // ── TOP TIER side ──
+  const tt_sG=ctx.createLinearGradient(CX-T1W,TT_TOP,CX+T1W,TT_BOT);
+  tt_sG.addColorStop(0,'#0d1428'); tt_sG.addColorStop(.5,'#192040'); tt_sG.addColorStop(1,'#0d1428');
+  ctx.fillStyle=tt_sG;
+  ctx.beginPath();
+  ctx.ellipse(CX,TT_BOT,T1W,9,0,0,Math.PI);
+  ctx.lineTo(CX-T1W,TT_TOP);
+  ctx.ellipse(CX,TT_TOP,T1W,9,0,Math.PI,0);
+  ctx.closePath(); ctx.fill();
+
+  // rose dotted band on top tier
+  for(let dx=-T1W+16;dx<T1W-10;dx+=18){
+    const ex=CX+dx, ey=TT_TOP+18+Math.sin(dx*.11)*3;
+    ctx.beginPath(); ctx.arc(ex,ey,1.8,0,Math.PI*2);
+    ctx.fillStyle='rgba(240,120,152,.38)'; ctx.fill();
+  }
+
+  // top tier top ellipse
+  const tt_tG=ctx.createRadialGradient(CX-22,TT_TOP-4,3,CX,TT_TOP,T1W);
+  tt_tG.addColorStop(0,'#2a3668'); tt_tG.addColorStop(.45,'#1e2a52'); tt_tG.addColorStop(1,'#121c3a');
+  ctx.fillStyle=tt_tG;
+  ctx.beginPath(); ctx.ellipse(CX,TT_TOP,T1W,9,0,0,Math.PI*2); ctx.fill();
+
+  // rose frosting drips from TT_TOP
+  [-100,-66,-32,4,38,72,106].forEach(dx=>{
+    const drx=CX+dx, dlen=8+Math.abs(Math.cos(dx*.15))*11;
+    const fG2=ctx.createLinearGradient(drx,TT_TOP,drx,TT_TOP+dlen);
+    fG2.addColorStop(0,'rgba(240,120,152,.38)'); fG2.addColorStop(1,'rgba(240,120,152,0)');
+    ctx.fillStyle=fG2;
+    ctx.beginPath(); ctx.ellipse(drx,TT_TOP+dlen,4,4.5,0,0,Math.PI*2); ctx.fill();
+    ctx.fillRect(drx-3,TT_TOP,6,dlen);
+  });
+
+  // gold sugar pearls on top surface
+  [[-72,-2],[-38,3],[-8,-2],[24,3],[55,-1],[82,2]].forEach(([dx,dy])=>{
+    ctx.beginPath(); ctx.arc(CX+dx,TT_TOP+dy,2.4,0,Math.PI*2);
+    const pg=ctx.createRadialGradient(CX+dx-1,TT_TOP+dy-1,0,CX+dx,TT_TOP+dy,2.4);
+    pg.addColorStop(0,GOLD3); pg.addColorStop(1,GOLD);
+    ctx.fillStyle=pg; ctx.fill();
+  });
+  // rose petal dots on top surface
+  [[-55,2],[-20,-2],[14,3],[46,-1],[78,2]].forEach(([dx,dy])=>{
+    ctx.beginPath(); ctx.arc(CX+dx,TT_TOP+dy,1.7,0,Math.PI*2);
+    ctx.fillStyle='rgba(240,120,152,.58)'; ctx.fill();
+  });
+
+  // gold border ring on top surface edge
+  ctx.strokeStyle='rgba(201,152,58,.3)'; ctx.lineWidth=1;
+  ctx.beginPath(); ctx.ellipse(CX,TT_TOP,T1W-4,7,0,0,Math.PI*2); ctx.stroke();
+
+  // "25" on top tier side
+  ctx.save();
+  ctx.font='italic 600 17px "Bodoni Moda",Georgia,serif';
+  ctx.fillStyle='rgba(232,188,90,.62)';
+  ctx.textAlign='center'; ctx.textBaseline='middle';
+  ctx.fillText('25',CX, TT_TOP+(TT_BOT-TT_TOP)*.5+2);
+  ctx.restore();
+}
+
+// ── draw one candle ──
+function drawCandle(c,i,t){
+  const f=flames[i];
+  const bx=c.x-CW2/2, by=TT_TOP-8, ch=c.h;
+
+  // warm glow
+  if(f.alpha>.01){
+    const fx=c.x+f.wob, fy=by-ch-5;
+    const gR=ctx.createRadialGradient(fx,fy,0,fx,fy,44);
+    gR.addColorStop(0,`rgba(255,185,60,${.13*f.alpha})`);
+    gR.addColorStop(.5,`rgba(255,120,30,${.05*f.alpha})`);
+    gR.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.fillStyle=gR; ctx.beginPath(); ctx.arc(fx,fy,44,0,Math.PI*2); ctx.fill();
+  }
+
+  // body
+  const bG=ctx.createLinearGradient(bx,by-ch,bx+CW2,by);
+  bG.addColorStop(0,'rgba(255,255,255,.16)');
+  bG.addColorStop(.3,c.body); bG.addColorStop(.75,c.body); bG.addColorStop(1,c.dark);
+  ctx.fillStyle=bG;
+  ctx.beginPath(); ctx.roundRect(bx,by-ch,CW2,ch,[3,3,1,1]); ctx.fill();
+  // shine
+  ctx.fillStyle='rgba(255,255,255,.22)';
+  ctx.beginPath(); ctx.roundRect(bx+2,by-ch+4,3,ch-8,2); ctx.fill();
+
+  // wax drip
+  const drx=c.x+c.dripSide*3.5, dry=by-ch+6, dlen=11+Math.sin(i*1.8)*7;
+  ctx.strokeStyle=c.body; ctx.lineWidth=4; ctx.lineCap='round'; ctx.globalAlpha=.52;
+  ctx.beginPath(); ctx.moveTo(drx,dry);
+  ctx.quadraticCurveTo(drx+c.dripSide*2.5,dry+dlen*.6,drx+c.dripSide*1.5,dry+dlen);
+  ctx.stroke();
+  ctx.beginPath(); ctx.arc(drx+c.dripSide*1.5,dry+dlen+2,3,0,Math.PI*2);
+  ctx.fillStyle=c.body; ctx.fill(); ctx.globalAlpha=1;
+
+  // wick
+  ctx.strokeStyle='#1a0e1a'; ctx.lineWidth=1.6; ctx.lineCap='round';
+  ctx.beginPath(); ctx.moveTo(c.x,by-ch); ctx.lineTo(c.x+f.wob*1.4,by-ch-7); ctx.stroke();
+
+  // flame
+  if(f.alpha>.02){
+    const fx=c.x+f.wob, fy=by-ch-7;
+    const tick=t*55;
+    const fsc=.82+.18*Math.sin(tick*f.fspd+f.flick);
+    const fH=(16+4*Math.sin(tick*f.fspd*.9+f.flick))*fsc;
+    const fW=(4.5+1*Math.cos(tick*f.fspd*1.1))*fsc;
+
+    ctx.save(); ctx.translate(fx,fy); ctx.globalAlpha=f.alpha;
+
+    // outer flame
+    const flG=ctx.createRadialGradient(f.wob*.25,-fH*.3,0,f.wob*.25,-fH*.45,fW*2.4);
+    flG.addColorStop(0,'rgba(255,255,200,1)'); flG.addColorStop(.2,'rgba(255,200,60,1)');
+    flG.addColorStop(.55,'rgba(255,100,20,.9)'); flG.addColorStop(1,'rgba(200,40,10,0)');
+    ctx.fillStyle=flG;
+    ctx.beginPath();
+    ctx.moveTo(0,0);
+    ctx.bezierCurveTo(fW,-fH*.28, fW*.9+f.wob,-fH*.78, f.wob*.5,-fH);
+    ctx.bezierCurveTo(-fW*.9+f.wob*.5,-fH*.78, -fW,-fH*.28, 0,0);
+    ctx.fill();
+
+    // blue core
+    const cG=ctx.createRadialGradient(f.wob*.15,-fH*.18,0,f.wob*.15,-fH*.18,fW*.72);
+    cG.addColorStop(0,'rgba(210,235,255,.95)'); cG.addColorStop(.4,'rgba(170,205,255,.52)');
+    cG.addColorStop(1,'rgba(140,180,255,0)');
+    ctx.fillStyle=cG;
+    ctx.beginPath(); ctx.ellipse(f.wob*.15,-fH*.2,fW*.42,fH*.28,0,0,Math.PI*2); ctx.fill();
+
+    ctx.globalAlpha=1; ctx.restore();
+  }
+}
+
+function drawSmoke(){
+  smokes.forEach(s=>{
+    const a=s.a*s.life*s.life;
+    ctx.save(); ctx.globalAlpha=a;
+    const sg=ctx.createRadialGradient(s.x,s.y,0,s.x,s.y,s.r);
+    sg.addColorStop(0,`rgba(180,185,210,${a})`); sg.addColorStop(1,'rgba(180,185,210,0)');
+    ctx.fillStyle=sg; ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2); ctx.fill();
+    ctx.restore();
+    s.x+=s.vx+Math.sin(s.life*7)*.15; s.y+=s.vy; s.r+=.16; s.life-=.014;
+  });
+  smokes=smokes.filter(s=>s.life>0);
+}
+
+function drawAll(ts){
+  const t=ts/1000;
+  ctx.clearRect(0,0,CW,CH);
+  drawCake();
+  CANDLES.forEach((c,i)=>{
+    const f=flames[i];
+    f.flick+=f.fspd; f.wobV+=(Math.random()-.5)*.32; f.wobV*=.86;
+    f.wob+=f.wobV; f.wob=Math.max(-2.5,Math.min(2.5,f.wob));
+    if(!f.lit&&f.alpha>0){
+      if(Math.random()<.28) puff(c.x+f.wob, TT_TOP-8-c.h-5);
+      f.alpha=Math.max(0,f.alpha-.022);
+    }
+    drawCandle(c,i,t);
+  });
+  drawSmoke();
+  requestAnimationFrame(drawAll);
+}
+requestAnimationFrame(drawAll);
+
+let _relit=true;
 function blowCandles(){
-  if(!relit)return;relit=false;lC=cD.length;
-  cD.forEach((_,i)=>setTimeout(()=>{
-    const fw=document.getElementById(`fl-${i}`);
-    if(fw)fw.classList.add('out');
-    if(--lC===0)document.getElementById('candle-wish').classList.add('show');
-  },i*180));
+  if(!_relit)return; _relit=false;
+  flames.forEach((f,i)=>setTimeout(()=>{
+    f.lit=false; puff(CANDLES[i].x+f.wob, TT_TOP-8-CANDLES[i].h-5);
+    if(i===flames.length-1) document.getElementById('candle-wish').classList.add('show');
+  },i*210));
   setTimeout(()=>{
-    cD.forEach((_,i)=>{const fw=document.getElementById(`fl-${i}`);if(fw)fw.classList.remove('out');});
+    flames.forEach(f=>{f.lit=true;f.alpha=0;});
+    const fade=setInterval(()=>{
+      let done=true;
+      flames.forEach(f=>{if(f.alpha<1){f.alpha=Math.min(1,f.alpha+.035);done=false;}});
+      if(done)clearInterval(fade);
+    },28);
     document.getElementById('candle-wish').classList.remove('show');
-    lC=cD.length;relit=true;
+    _relit=true;
   },7500);
 }
-(async function mic(){
-  try{
-    const s=await navigator.mediaDevices.getUserMedia({audio:true});
-    const ac=new(window.AudioContext||window.webkitAudioContext)();
-    const src=ac.createMediaStreamSource(s),ana=ac.createAnalyser();
-    ana.fftSize=512;src.connect(ana);
-    const buf=new Uint8Array(ana.fftSize);let cd=false;
-    function chk(){
-      ana.getByteTimeDomainData(buf);
-      let sum=0;buf.forEach(v=>sum+=Math.abs(v-128));
-      if(sum/buf.length>20&&!cd){cd=true;blowCandles();setTimeout(()=>cd=false,4000);}
-      requestAnimationFrame(chk);
-    }
-    chk();document.getElementById('mic-status').textContent='🎤 mic active — blow to extinguish!';
-  }catch(e){document.getElementById('mic-status').textContent='use the button above ↑';}
-})();
+
 </script>
 </body>
 </html>
